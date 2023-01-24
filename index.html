@@ -3,36 +3,61 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link href="styles/style.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@1,900&display=swap" rel="stylesheet"> 
+    
 
-    <title>My test page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@1,900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    
+
+    <link href="styles/style.css" rel="stylesheet" />
+
+
+    <title>Интерфейс сервера сбора данных с ПО ВЕКТОР</title>
   </head>
   <body>
-    <h1>Melodic Team</h1>
-    <h2>О коллективе</h2>
-      <p>Те кто сначала слушают тишину, а потом делают музыку.</p>
-    <h2>Потоки мыслей</h2>
-    <h2>Пролезть в другие сферы</h2>
-    <h3><a href="">Программное обеспечение</a></h3>
-    <h3>Кофе с собой</h3>
+    <div id="site-header">
+      <h2>Роботы на связи:</h2>
+      <table border="1px">
+        <tr>
+          <td>asdf</td>
+          <td>asdfsd</td>
+        </tr>
+        <tr>
+          <td>dfasdf</td>
+          <td>asdfisadjf</td>
+          <td>asdfasdf</td>
+        </tr>
+      </table>
+      <button>Сделать запрос</button>
+    </div>
 
-    <p>This is my life</p>
-
-    <ul>
-      <li>Элемент списка 1</li>
-      <li>Элемент списка 2</li>
-      <li>Элемент списка 3</li>
-
-    </ul>
-
-
-    <img src="images/melodic-team-logo.jpg" alt="Melodic Team Group logo" />
-
-    <button>Моя кнопка</button>
+    <div id="control-panel">
+      <h1>Panel Control</h1>
+      <button>Отправить на точку 1</button> <br>
+      <button>Отправить на точку 2</button> <br>
+      <button>Отправить на точку 3</button> <br> 
+      <button>Отправить на точку 4</button> <br>
+      <button>Отправить на точку 5</button> <br>
 
 
+      <div id="state-block">
+        <span>Текущее состояние: </span> <span id="text-state"> текст состояния</span><br>
+        <button>Принудительный запрос состояния</button>
+      </div>
 
+    </div>
+
+
+    <div id="footer">
+      <h2>3Logic Group</h2>
+      <p>Отдел роботизированных систем.</p>
+      <p>This is my life</p>
+      <h3>Машинное зрение</h3>
+      <h3>Автономная навигация и позиционирование</h3>
+      <h3><a href="">Программное обеспечение</a></h3>
+      <h3>Обеспечить запасом кофе каждого программиста</h3> 
+    </div>
 
 
     <script src="scripts/main.js"></script>
