@@ -60,6 +60,12 @@ h2 {
 
 
 
+.cool-class
+{
+    color:rgb(54, 74, 98);
+
+}
+
 
 h1#osobyi {
     margin: 0;
@@ -80,3 +86,12 @@ p {
 }
 
 
+
+
+.state-cells {
+    color:rgb(12, 5, 46);
+    font-size: 20px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-align: center;
+}

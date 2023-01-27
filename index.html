@@ -17,34 +17,38 @@
   </head>
   <body>
     <div id="site-header">
-      <h2>Роботы на связи:</h2>
+      <h2>Состояние робота</h2>
       <table border="1px">
         <tr>
-          <td>asdf</td>
-          <td>asdfsd</td>
+          <td>Состояние по заряду</td>
+          <td>Состояние по движению</td>
+          <td>Состояние по задачам</td>
         </tr>
         <tr>
-          <td>dfasdf</td>
-          <td>asdfisadjf</td>
-          <td>asdfasdf</td>
+          <td id="charge-state-cell" class="state-cells"></td>
+          <td id="moving-state-cell" class="state-cells"></td>
+          <td id="tasks-state-cell" class="state-cells"></td>
         </tr>
       </table>
-      <button>Сделать запрос</button>
+      <button id="btn-make-request">Сделать запрос</button>
     </div>
 
     <div id="control-panel">
       <h1>Panel Control</h1>
-      <button>Отправить на точку 1</button> <br>
-      <button>Отправить на точку 2</button> <br>
-      <button>Отправить на точку 3</button> <br> 
-      <button>Отправить на точку 4</button> <br>
-      <button>Отправить на точку 5</button> <br>
+      <button id="go_point_start">Отправить на точку старта</button> <br>
+      <button id="go_point_1">Отправить на точку 1</button> <br>
+      <button id="go_register">Регистр notification</button> <br>
+
 
 
       <div id="state-block">
         <span>Текущее состояние: </span> <span id="text-state"> текст состояния</span><br>
         <button>Принудительный запрос состояния</button>
       </div>
+
+
+      <div class="cool-class">asdfsadf<span>asdfdf</span><p>PARAGRAPH</p></div>
+      <h3 class="cool-class">Text of class</h3>
 
     </div>
 
