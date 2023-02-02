@@ -206,3 +206,87 @@ button_go_cancel.addEventListener('click', async _ => {
 
 
 
+
+
+(function()
+{
+  let sum, net = '25', tax = 5.233;
+
+  sum = net + tax;
+  console.log('sum: '+ sum + ' ' + typeof sum);
+  sum = parseFloat(net) + tax;
+  console.log('sum: '+ sum + ' ' + typeof sum);
+  console.log('tax:' + tax + ' ' + typeof tax);
+  tax = tax.toString();
+  console.log('tax:' + tax + ' ' + typeof tax);
+  net = '$' + net;
+  console.log('net: ' + net + ' ' + parseInt(net));
+  console.log('net Not a number ? ' + isNaN(net));
+  console.log(2**64);
+
+})()
+
+
+let day = 32;
+ 
+
+( function() {
+
+  let packetFromRobot = 
+  {
+    manufacturer: 'Unitree',
+    modelRobot: 'Go1',
+    payloadPacket: 0x80,
+    
+    processed: false,
+    processThisPacket: function ()
+    {
+      console.log("Эмуляция процесса обработки полезных данных пакета\n");
+      this.processed = true;  
+    },
+
+    isPacketProcessed: function ()
+    {
+      if (this.processed === true)
+      {
+        console.log("Этот пакет обработан. В принципе, он больше не нужен");
+      }
+      else
+      {
+        console.log("На данный момент пакет обработан НЕ БЫЛ!")
+      }
+    },
+
+    anotherFunc: function ()
+    {
+      return packetFromRobot.processed;
+    }
+
+  }
+
+
+  console.log(packetFromRobot['manufacturer']);
+  console.log(packetFromRobot['manufacture']);
+  console.log(packetFromRobot.modelRobot);
+  packetFromRobot.isPacketProcessed();
+  packetFromRobot.processThisPacket();
+  packetFromRobot.isPacketProcessed();
+  console.log('то что щас ' + packetFromRobot.anotherFunc());
+
+  let colors = [];
+  colors[0] = "red";
+
+  console.log(colors);
+
+
+  //packetFromRobot.manufacturer = "Deep Robotics";
+
+  //packetFromRobot.dopSvoistvo = "123";
+
+  //for(svoistvo in packetFromRobot)
+  //{
+  //  console.log("Очередная итерацию переборки: " + svoistvo + ' imeet \nznachenie ')
+ // }
+
+})()
+
