@@ -273,10 +273,22 @@ let day = 32;
   packetFromRobot.isPacketProcessed();
   console.log('то что щас ' + packetFromRobot.anotherFunc());
 
-  let colors = [];
-  colors[0] = "red";
 
-  console.log(colors);
+
+
+  let myStr = "    Это оочень пиздатая и интересная страта ата с ценной ока информацией       ";
+
+  let naidennoe = myStr.trim(myStr);
+  
+
+  console.log('Работаем: ' + naidennoe.repeat(2));
+
+
+  
+
+
+  console.log(history);
+  history.go(-2);
 
 
   //packetFromRobot.manufacturer = "Deep Robotics";
@@ -290,3 +302,7 @@ let day = 32;
 
 })()
 
+function myFunc()
+  {
+    alert("пидор");
+  }
