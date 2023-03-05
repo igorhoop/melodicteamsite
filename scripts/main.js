@@ -291,18 +291,51 @@ let day = 32;
   history.go(-2);
 
 
-  //packetFromRobot.manufacturer = "Deep Robotics";
 
-  //packetFromRobot.dopSvoistvo = "123";
+  const box = document.getElementById('box');
+  const btn = document.getElementById('btn');
 
-  //for(svoistvo in packetFromRobot)
-  //{
-  //  console.log("Очередная итерацию переборки: " + svoistvo + ' imeet \nznachenie ')
- // }
+  box.addEventListener('mouseover',function(ev){ reactTo(ev,'Red')});
+  box.addEventListener('mouseout',function(ev){ reactTo(ev,'Purple')});
+  box.addEventListener('mousedown',function(ev){ reactTo(ev,'Green')});
+  box.addEventListener('mouseup',function(ev){ reactTo(ev,'Blue')});
+  btn.addEventListener('click',function(ev){ reactTo(ev,'Orange')});
+
+
+
 
 })()
+
+
+
+window.onkeydown = (eve) => { alert("вы нажали " + eve.keyCode) };
+
+
+function reactTo(event, color)
+{
+  document.getElementById('box').style.background = color;
+  document.getElementById('info').innerText = event.type;
+}
+
 
 function myFunc()
   {
     alert("пидор");
+    setCookie('User', 'Igor Parandiuk,12345', 7)
+    setCookie('User2', 'Jalkaya Psina iz psarni,,,12345', 7)
+
+    console.log(document.cookie)
+
+    const list = document.getElementById('list');
+    let i, value = getCookie('User0')
+    if(value.indexOf(','))
+    {
+      value = value.split(',')
+    }
+    
+    for(i = 0; i < value.length; i++)
+    {
+      list.innerHTML += '<li>' + value[i];
+    }
+
   }
