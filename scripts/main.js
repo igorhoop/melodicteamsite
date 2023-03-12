@@ -310,6 +310,23 @@ let day = 32;
   list.addEventListener('change', function() { reactTo3(list,event)});
   addEventListener('load', function(){reactTo3(list,event)});
 
+
+  let obj = { 
+    category: 'Fashion',
+    models: [{ name: 'Alice', age: 21, city:'New York'}, {name:'Kelly', age:23, city:'Las Veags'}, {name:'igor', city: 'floreni'}]
+
+  }
+
+  console.log(obj);
+
+  let json_obj = JSON.stringify(obj);
+  console.log(json_obj);
+  let new_obj = JSON.parse(json_obj);
+  console.log(new_obj);
+
+  console.log(new_obj['category']);
+  console.log(new_obj.models[2].name)
+
 })()
 
 
