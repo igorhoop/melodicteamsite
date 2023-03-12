@@ -302,7 +302,13 @@ let day = 32;
   btn.addEventListener('click',function(ev){ reactTo(ev,'Orange')});
 
 
+  const form = document.getElementById('myform');
+  form.addEventListener('submit', function(event) {reactTo2(form,event)});
+  form.spisok[0].checked=true;
 
+  const list = document.getElementById('list');
+  list.addEventListener('change', function() { reactTo3(list,event)});
+  addEventListener('load', function(){reactTo3(list,event)});
 
 })()
 
@@ -310,6 +316,33 @@ let day = 32;
 
 window.onkeydown = (eve) => { alert("вы нажали " + eve.keyCode) };
 
+
+function reactTo3(list, event)
+{
+  console.log("XXX: " + list.options.length);
+  const info = document.getElementById('anotherinfo');
+  let index=list.options.selectedIndex;
+  let city = list.options[index].value;
+  info.innerHTML = event.type + '<br>Selected:';
+  info.innerHTML += city + '<br>Index: ' + index;
+
+}
+
+
+function reactTo2(form, event)
+{
+  let i, ok, summary = '';
+  console.log("Длина списка: " + form.spisok.length + ". Еще инфа: " + form.elements['spisok'].value)
+  for(i=0; i< form.spisok.length; i++)
+  {
+    if(form.spisok[i].checked)
+    {
+      summary += form.spisok[i].value + ' | '
+    }
+  }
+  ok = confirm('Submit These Choices?\n' + summary); 
+  if (!ok) {event.preventDefault()};
+}
 
 function reactTo(event, color)
 {
