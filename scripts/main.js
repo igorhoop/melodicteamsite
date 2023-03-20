@@ -327,7 +327,62 @@ let day = 32;
   console.log(new_obj['category']);
   console.log(new_obj.models[2].name)
 
+  const promise2 = new Promise(function(resolve, reject)
+  {
+   
+    let random = Math.round(Math.random()*10);
+    if(random % 2 === 0)
+    {
+      setTimeout(function(){resolve(random)},1000)
+    }
+    else
+    {
+      setTimeout(function(){reject(random)}, 1000)
+    }
+  }
+  );
+
+
+  
+  promise2
+  .then(function(res) { alert(res); return res})
+  .then(function(res) { console.log(res + 'Is Even')} )
+  .catch(function(res2) { console.log(res2 + 'Is Odd')} )
+  
+  /*
+  promise
+  .then(console.log(promise))
+  .then(function(res) {console.log(res+' Is Even ' + promise.result); })
+  .catch(function(err) {console.log(err+' Is Odd')})
+  */
+
+
+  console.log(fetch('https://lk.waviot.ru/api.general/info/').result)
+  //.then(pr => pr.json())
+  //.then(pr => console.log(pr))
+  //.then(data => console.log(data))
+  
+
 })()
+
+function ProcessingPromise(promise)
+{
+  let newobj = promise.json();
+  console.log("Выглядит объект так: " + newobj)
+  console.log(newobj)
+
+  
+  return 0;
+}
+
+
+function ProcessingJSON(data)
+{
+  let obj = data;
+  console.log(obj[3].author.node_id)
+  console.log("Тип " + typeof obj)
+  console.log("Внутри " + obj);
+}
 
 
 
