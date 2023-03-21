@@ -404,6 +404,20 @@ function total()
       sum = 0;
     }
   }
+
+  while(colnum !== 5)
+  {
+    for(i=0; i<15; i++)
+    {
+      if(i%5 === 0)
+      {
+        sum += parseFloat(document.getElementById('n'+(i+colnum)).innerText)
+      }
+    }
+    colnum++;
+    document.getElementById('ct'+colnum).innerText=sum.toFixed(2);
+    sum = 0;
+  }
 }
 
 function ProcessingPromise(promise)
