@@ -381,6 +381,29 @@ function zapolnenie(cells)
     document.getElementById('n' + i).innerText = values[i].toFixed(2);
     i++;
   }
+
+  total();
+}
+
+
+function total()
+{
+  let i = 0;
+  let sum = 0;
+  let rownum = 1;
+  let colnum = 0;
+
+  for(i=0; i<15;i++)
+  {
+    sum += parseFloat(document.getElementById('n'+i).innerText)
+
+    if((i+1)%5 === 0)
+    {
+      document.getElementById('rt'+rownum).innerText = sum.toFixed(2);
+      rownum++;
+      sum = 0;
+    }
+  }
 }
 
 function ProcessingPromise(promise)
