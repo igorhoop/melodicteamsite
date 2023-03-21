@@ -357,17 +357,31 @@ let day = 32;
   */
 
 
-  console.log(fetch('https://lk.waviot.ru/api.general/info/').result)
+  //console.log(fetch('https://lk.waviot.ru/api.general/info/').result)
   //.then(pr => pr.json())
   //.then(pr => console.log(pr))
   //.then(data => console.log(data))
   
 
-  fetch('http://localhost/data.json')
+  fetch('http://10.18.86.9/data.json')
   .then(response=>response.json())
+  .then(cells => zapolnenie(cells))
+  .catch(err => console.log(err))
 
 
 })()
+
+function zapolnenie(data)
+{
+  const values = Object.values(cells);
+  let i = 0;
+
+  while(i < values.length)
+  {
+    document.getElementById('n' + i).innerText = values[i].toFixed(2);
+    i++;
+  }
+}
 
 function ProcessingPromise(promise)
 {
