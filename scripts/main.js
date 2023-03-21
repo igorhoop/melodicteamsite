@@ -363,7 +363,7 @@ let day = 32;
   //.then(data => console.log(data))
   
 
-  fetch('http://localhost/data/data.json')
+  fetch('http://localhost/data.json')
   .then(response=>response.json())
 
 
