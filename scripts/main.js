@@ -447,6 +447,31 @@ function ProcessingJSON(data)
 }
 
 
+function update()
+{
+  let row = document.getElementById('rownum').options.selectedIndex;
+  let col = document.getElementById('colnum').options.selectedIndex;
+  let newval = parseFloat(document.getElementById('newval').value);
+  let legend = document.getElementById('legend');
+  let target = null;
+
+  if(row === 0 ) {legend.innerText = 'Select a row'; return }
+  if(col ===0) {legend.innerText = 'Select a column'; return }
+  if(!newval) {legend.innerText = 'Enter a value'; return}
+  if(isNaN(newval)) {legend.innerText = 'Enter a number'; return}
+
+  target = (((row-1)*5)+col)-1
+  document.getElementById('n'+target).innerText = newval.toFixed(2);
+
+  total();
+
+  document.getElementById('rownum').options[0].selected = true;
+  document.getElementById('colnum').options[0].selected = true;
+  document.getElementById('newval').value='';
+  legend.innerText='Cell Editor';
+
+}
+
 
 window.onkeydown = (eve) => { alert("вы нажали " + eve.keyCode) };
 
