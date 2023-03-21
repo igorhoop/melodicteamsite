@@ -418,6 +418,13 @@ function total()
     document.getElementById('ct'+colnum).innerText=sum.toFixed(2);
     sum = 0;
   }
+
+
+  for(i = 0; i< 15; i++)
+  {
+    sum += parseFloat(document.getElementById('n'+i).innerText);
+  }
+  document.getElementById('gt').innerText = sum.toFixed(2);
 }
 
 function ProcessingPromise(promise)
