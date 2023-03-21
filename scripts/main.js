@@ -363,6 +363,10 @@ let day = 32;
   //.then(data => console.log(data))
   
 
+  fetch('http://localhost/data/data.json')
+  .then(response=>response.json())
+
+
 })()
 
 function ProcessingPromise(promise)
