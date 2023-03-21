@@ -95,3 +95,13 @@ p {
     font-weight: bold;
     text-align: center;
 }
+
+legend {background: Tomato; color: White; }
+table {text-align: center;}
+td {width: 50px; height: 20px;}
+td.col {background: LightBlue;}
+td.row {background: LightGreen;}
+td.tot {background: DarkOrange; color: White;}
+td.gto {background: Khaki;}
+#databox{width:360px; padding:5px; margin:auto;}
+#editbox{width:360px; padding: 5px; margin: auto; border:1px solid Tomato; color: Tomato;}
