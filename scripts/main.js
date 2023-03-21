@@ -371,7 +371,7 @@ let day = 32;
 
 })()
 
-function zapolnenie(data)
+function zapolnenie(cells)
 {
   const values = Object.values(cells);
   let i = 0;
