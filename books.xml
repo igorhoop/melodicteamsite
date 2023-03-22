@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<catalog>
+    <book>
+        <id>978-1-84078-840-2</id>
+        <title>C PROGRAMMING in easy steps, 5th Edition</title>
+    </book>
+    <book>
+        <id>978-1-84078-840-3</id>
+        <title>Тупой трейдинг, 2 издание</title>
+    </book>
+    <book>
+        <id>978-1-84078-840-4</id>
+        <title>Лох - это судьба. Как заработать на пирамидах. 1 издание</title>
+    </book>
+    <book>
+        <id>978-1-84078-840-5</id>
+        <title>C++ и Линукс, лучшая комбинация</title>
+    </book>
+    <book>
+        <id>978-1-84078-840-6</id>
+        <title>Как двигаться по карьере и купить квартиру</title>
+    </book>
+    <book>
+        <id>978-1-84078-840-7</id>
+        <title>Как ездить в отпуск 6 раз за год</title>
+    </book>
+    <book>
+        <id>978-1-84078-840-83</id>
+        <title>JavaScript - Единственная нормальная книга по языку</title>
+    </book>
+    <book>
+        <id>978-1-84078-840-999</id>
+        <title>Пишем сетевые программы на Линукс</title>
+    </book>
+    <book>
+        <id>978-1-84078-840-00010</id>
+        <title>HTML и CSS. Наводим красоту</title>
+    </book>
+</catalog>
