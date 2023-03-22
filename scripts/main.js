@@ -546,7 +546,7 @@ function myFunc()
   function getData(xml)
   {
     const xmlDoc = xml.responseXML;
-    const tags = xmlDoc.getELementsByTagName('book');
+    const tags = xmlDoc.getElementsByTagName('book');
     let list = ''
     let i = 0
     for(i = 0; i < tags.length; i++)
