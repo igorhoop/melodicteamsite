@@ -551,7 +551,7 @@ function myFunc()
     let i = 0
     for(i = 0; i < tags.length; i++)
     {
-      list += '<li>' + tags[i].getELementsByTagName('title')[0].firstChild.data
+      list += '<li>' + tags[i].getElementsByTagName('title')[0].firstChild.data
     }
 
     document.getElementById('listbooks').innerHTML = list;
