@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:ital,wght@1,900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     
+    <script src = "//maps.googleapis.com/maps/api/js?key=API_KEY"></script> <!--Получаем ключ API для Google Maps, заменить API_KEY на ключ из cloud.google.com-->
 
     <link href="styles/style.css" rel="stylesheet" />
 
@@ -191,6 +192,52 @@
     <button onclick="loadXML()">Получить инфу по книгам</button>
     <ol id="listbooks"></ol>
 
+
+    <!--SVG ГРАФИКА-->
+    <embed id="svgDoc" src="banner.svg" type="image/svg+xml" width="500" height="70">
+    <br>
+    <input id="htmTxt" size="50">
+    <button id="htmBtn">Sent To SVG Document</button>
+    <!--======-->
+
+    <br><br><br><br>
+
+    <canvas id="canvas" width="500" height="150">[CANVAS AREA]</canvas>
+    
+
+      
+    <fieldset>
+      <legend id="legendzzz">Enter Data</legend>
+      <input id="data" type="text">
+      <button onclick="store()">Store Data</button>
+      <button onclick="recall()">Recall Data</button>
+      <button onclick="remove()">Reset</button>
+    </fieldset>
+
+
+    <p>
+      <img id="bin" src="images/bin.jpg" alt="Bin">
+      <img class="dragfolder" id="red" src="images/redfolder.png" width="100px" alt="Folder">
+      <img class="dragfolder" id="blue" src="images/bluefolder.jpg" width="100px" alt="Folder">
+      <img class="dragfolder" id="phiolet" src="images/phioletfolder.png" width="100px" alt="Folder">
+    </p>
+
+    <fieldset>
+      <legend>Folder Dropped:</legend>
+      <ol id="listzzz"></ol>
+    </fieldset>
+
+
+    <h1>Sender</h1>
+    <p id="host">Main Page Domain:   </p>
+    <iframe id="cage" width="450" height="120" src="http://localhost/receiver.html"></iframe>
+    <button onclick="sendMsg()">Send Message</button>
+
+
+    <p id="msg" style="width:450px; height: 50px; border: 1px solid black;"></p>
+    <p id="map" style="width:450px; height: 200px"></p>
+
+    
 
 
     <script src="scripts/getter-setter.js"></script>

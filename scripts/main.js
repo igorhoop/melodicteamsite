@@ -363,7 +363,7 @@ let day = 32;
   //.then(data => console.log(data))
   
 
-  fetch('http://10.18.86.9/data.json')
+  fetch('http://localhost/data.json')
   .then(response=>response.json())
   .then(cells => zapolnenie(cells))
   .catch(err => console.log(err))
@@ -473,7 +473,7 @@ function update()
 }
 
 
-window.onkeydown = (eve) => { alert("вы нажали " + eve.keyCode) };
+//window.onkeydown = (eve) => { alert("вы нажали " + eve.keyCode) };
 
 
 function reactTo3(list, event)
@@ -539,7 +539,7 @@ function myFunc()
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.open('GET', 'books.xml', true);
     xmlhttp.send();
-    xmlhttp.onreadystatechange = function () {if(this.readyState==4 && this.status==200) getData(this);}
+    xmlhttp.onreadystatechange = function () {if(this.readyState==4 && this.status==200) getData(this);} // если запрос получился то вызываем обработчик                                                                   
   }
 
 
@@ -556,3 +556,197 @@ function myFunc()
 
     document.getElementById('listbooks').innerHTML = list;
   }
+
+
+  function loadSVG()
+  {
+    const svgDoc = document.getElementById('svgDoc').getSVGDocument();
+    const svgTxt = svgDoc.getElementById('svgTxt');
+    const svgBtn = svgDoc.getElementById('svgBtn');
+    const htmTxt = document.getElementById('htmTxt');
+    const htmBtn = document.getElementById('htmBtn');
+
+  htmBtn.addEventListener('click', function() {
+    svgTxt.lastChild.replaceWith(htmTxt.value);
+    htmTxt.value='';
+  })
+  
+  svgBtn.addEventListener('click', function(){
+    htmTxt.value = svgTxt.lastChild.wholeText;
+    svgTxt.lastChild.replaceWith('SVG Text')
+  
+  })
+    
+  }
+
+  onload = loadSVG;
+
+
+  function init()
+  {
+    const canvas = document.getElementById('canvas');
+    if(canvas.getContext)
+    {
+      const context = canvas.getContext('2d')
+      const cw = canvas.witdh;
+      const ch = canvas.height;
+      let x = 5, y = 44, dx = 5, dy = 5;
+
+      context.fillStyle = 'Red';
+
+      setInterval(function(){
+        if((x + dx > cw-30) || (x + dx < 10))
+        { 
+          dx = -dx;
+        }
+        if((y + dy > ch-30) || (y + dy < 10))
+        {
+          dy = -dy
+        }
+        x += dx
+        y += dy
+        paintz(context, cw, ch, x,y)}, 100)
+    }
+  }
+
+ document.addEventListener('DOMContentLoaded', init) // после загрузки содержимого HTML ?
+
+  function paintz(context,cw,ch,x,y)
+  {
+    context.clearRect(0,0,cw,ch)
+    context.beginPath()
+    context.arc(x,y,15,0,(Math.PI*2), true)
+    context.fill();
+  }
+
+
+  function store()
+  {
+    let data = document.getElementById('data').value;
+    if(data==='')
+    {
+      return false;
+    }
+    else
+    {
+      localStorage.setItem('ls_data', data);
+      document.getElementById('data').value = '';
+      document.getElementById('legendzzz').innerText = localStorage.getItem('ls_data') + ' - Is Stored';
+    }
+  }
+
+
+  function recall()
+  {
+    if(localStorage.getItem('ls_data') === null)
+    {
+      document.getElementById('legendzzz').innerText = 'Enter Data';
+      return false;
+    }
+    else
+    {
+      document.getElementById('data').value=''
+      document.getElementById('legendzzz').innerText = 'Stored Data: ' + localStorage.getItem('ls_data');
+
+    }
+  }
+
+  function remove()
+  {
+    if(localStorage.getItem('ls_data') === null)
+    {
+      document.getElementById('legendzzz').innerText = 'Enter Data';
+      return false;
+    }
+    else
+    {
+      document.getElementById('legendzzz').innerText = localStorage.getItem('ls_data') + 'Is Removed';
+      localStorage.removeItem('ls_data');
+      document.getElementById('data').value='';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', dragNdrop);
+
+  function dragNdrop()
+  {
+    
+    const bin = document.getElementById('bin');
+    const folders = document.getElementsByClassName('dragfolder');
+    const list = document.getElementById('listzzz');
+
+    let i = 0;
+    for(i = 0; i < folders.length; i++)
+    {
+      folders[i].ondragstart = function(event) {
+        event.dataTransfer.setData('Text', this.id)
+      }
+    }
+
+    
+    //bin.ondragstart = function(event) { event.dataTransfer.setData('Text', this.id)}
+    bin.ondragover = function(event){ return false }
+
+    bin.ondrop = function(event) {
+      const did = event.dataTransfer.getData('Text');
+      const tag = document.getElementById(did);
+      //alert("черт"+tag)
+      if(did == "bin")
+      {
+        //alert("вы пытаетесь удалить корзину")
+        return false
+      }
+      else
+      {
+        list.innerHTML+='<li>' + did
+      }
+      tag.parentNode.removeChild(tag);
+    }
+  }
+
+
+  document.getElementById('host').innerText += document.domain;
+
+  function sendMsg()
+  {
+    const cage = document.getElementById('cage').contentWindow
+    cage.postMessage('Message Received from: ' + document.domain, 'http://localhost')
+  }
+
+
+  function initgeolocation()
+  {
+    if(navigator.geolocation)
+    {
+      document.getElementById('msg').innerText = 'Geolocation service is trying to find you...';
+      navigator.geolocation.getCurrentPosition(success, fail);
+    }
+    else
+    {
+      document.getElementById('msg').innerText = 'Your browser does not support Geolocation service';
+    }
+  }
+
+
+  function fail(position)
+  {
+    document.getElementById('msg').innerText = 'Geolocation service cannot find you at this time';
+  }
+
+
+  function success(position)
+  {
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    document.getElementById('msg').innerHTML = 'Found you at... <br>Latitude: ' + lat + ', Longitude: ' + lng;
+
+    const latlng = new google.maps.LatLng(lat, lng)
+    const options = {zoom:18, center: latlng, mapTypeId: google.maps.MapTypeId.ROADMAP}
+    const map = new google.maps.Map(document.getElementById('map'), options)
+    const marker = new google.maps.Marker({position: latlng, map: map, title: 'You are here'})
+  }
+
+
+  document.addEventListener('DOMContentLoaded', initgeolocation);
+
+  

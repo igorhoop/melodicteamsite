@@ -105,3 +105,15 @@ td.tot {background: DarkOrange; color: White;}
 td.gto {background: Khaki;}
 #databox{width:360px; padding:5px; margin:auto;}
 #editbox{width:360px; padding: 5px; margin: auto; border:1px solid Tomato; color: Tomato;}
+
+
+li:nth-child(even)
+{
+    background-color: rgb(248, 206, 206);
+}
+
+canvas
+{
+    background: Bisque;
+    border:2px solid Tomato;
+}
