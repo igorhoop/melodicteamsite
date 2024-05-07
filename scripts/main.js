@@ -60,6 +60,13 @@ myvar[0];
 //alert("tratata");
 
 
+function new_test()
+{
+  const socket = new WebSocket("ws://localhost:30001");
+  socket.send("Hello Server!");
+  
+}
+
 
 function list (data)
 {
@@ -225,6 +232,9 @@ button_go_cancel.addEventListener('click', async _ => {
   console.log(2**64);
 
 })()
+
+
+
 
 
 let day = 32;
