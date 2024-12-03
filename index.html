@@ -14,243 +14,54 @@
     <link href="styles/style.css" rel="stylesheet" />
 
 
-    <title>Интерфейс сервера сбора данных с ПО ВЕКТОР</title>
+    <title>Выполнение тестового задания green-api</title>
   </head>
+
+
   <body>
-    <div id="site-header">
-      <h2>Состояние робота</h2>
-      <table border="1px">
-        <tr>
-          <td>Состояние по заряду</td>
-          <td>Состояние по движению</td>
-          <td>Состояние по задачам</td>
-        </tr>
-        <tr>
-          <td id="charge-state-cell" class="state-cells"></td>
-          <td id="moving-state-cell" class="state-cells"></td>
-          <td id="tasks-state-cell" class="state-cells"></td>
-        </tr>
-      </table>
-      <button id="btn-make-request">Сделать запрос</button>
-    </div>
-
-    <div id="control-panel">
-      <h1>Panel Control</h1>
-      <button id="go_point_start">Отправить на точку старта</button> <br>
-      <button id="go_point_1">Отправить на точку 1</button> <br>
-      <button id="go_register">Регистр notification</button> <br>
-
-
-
-      <div id="state-block">
-        <span>Текущее состояние: </span> <span id="text-state"> текст состояния</span><br>
-        <button>Принудительный запрос состояния</button>
-      </div>
-
-
-      <div class="cool-class">asdfsadf<span>asdfdf</span><p>PARAGRAPH</p></div>
-      <h3 class="cool-class">Text of class</h3>
-
-    </div>
-
-
-    <div id="footer">
-      <h2>3Logic Group</h2>
-      <p>Отдел роботизированных систем.</p>
-      <p>This is my life</p>
-      <h3>Машинное зрение</h3>
-      <h3>Автономная навигация и позиционирование</h3>
-      <h3><a href="">Программное обеспечение</a></h3>
-      <h3>Обеспечить запасом кофе каждого программиста</h3> 
-    </div>
-
-    <div id="databox">
-      <table border="1px">
-        <tr>
-          <td></td>
-          <td class="col">1</td>
-          <td class="col">2</td>
-          <td class="col">3</td>
-          <td class="col">4</td>
-          <td class="col">5</td>
-          <td class="tot">Total</td>
-        </tr>
-        
-        <tr>
-          <td class="row">1</td>
-          <td id="n0"></td>
-          <td id="n1"></td>
-          <td id="n2"></td>
-          <td id="n3"></td>
-          <td id="n4"></td>
-          <td id="rt1" class="tot"></td>
-        </tr>
-
-        <tr>
-          <td class="row">2</td>
-          <td id="n5"></td>
-          <td id="n6"></td>
-          <td id="n7"></td>
-          <td id="n8"></td>
-          <td id="n9"></td>
-          <td id="rt2" class="tot"></td>
-        </tr>
-
-        <tr>
-          <td class="row">3</td>
-          <td id="n10"></td>
-          <td id="n11"></td>
-          <td id="n12"></td>
-          <td id="n13"></td>
-          <td id="n14"></td>
-          <td id="rt3" class="tot"></td>
-        </tr>
-
-        <tr>
-          <td class="tot">Total</td>
-          <td id="ct1" class="tot"></td>
-          <td id="ct2" class="tot"></td>
-          <td id="ct3" class="tot"></td>
-          <td id="ct4" class="tot"></td>
-          <td id="ct5" class="tot"></td>
-          <td id="gt" class="gto"></td>
-        </tr>
-      </table>
-    </div>
-
-    <form action="#">
-      <fieldset id="editbox">
-        <legend id="legend">Cell Editor</legend>
-          <div>
-            <select id="rownum">
-              <option selected="selected">Row</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-            </select>
-
-            <select id="colnum">
-              <option selected="selected">Column</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-            New Value:
-            <input id="newval" type="text" size="5" value="" >
-            <input type="button" value="Update" onclick="update()" >
-
-          </div>
-      </fieldset>
-  </form>
-
-
-    <p>Ниже будет форма для отправки данных серверной части программы</p>
-    <form id='myform' method="POST">
-      <fieldset>
-        <legend>Встроенная в границу надпись</legend>
-        <input type="checkbox" name="spisok" value="perviy">asdf_1
-        <input type="checkbox" name="spisok" value="vtoroi">asdf_2
-        <input type="checkbox" name="spisok" value="tretii">asdf_3
-        <input type="checkbox" name="spisok" value="chetvertyi">asdf_4
-      </fieldset>
-      <input type="submit">
-    </form>
-
-    <hr>
-    <hr>
-
-    <p>Ниже будет другая форма в виде списка</p>
-    <form method="POST">
-      <select id="list" name ="City">
-        <option value="Rome" selected>Rome</option>
-        <option value="London">London</option>
-        <option value="New York">New York</option>
-      </select>
-      <input type="submit">
-    </form>
-    <p id="anotherinfo"></p>
-
-    
-    <p id="box">Target</p>
-    <p id="info">Place mouse over target</p>
-
-
-    
-
-
-    <ul id="list">
-
-    </ul>
-    
-    <button onclick="myFunc()">Кнопка главная</button>
-    <button id="btn">Click Me</button>
-
-    <button onclick="new_test()">НОВЫЙ ТЕСТ</button>
-
-
-
-    <button onclick="loadXML()">Получить инфу по книгам</button>
-    <ol id="listbooks"></ol>
-
-
-    <!--SVG ГРАФИКА-->
-    <embed id="svgDoc" src="banner.svg" type="image/svg+xml" width="500" height="70">
-    <br>
-    <input id="htmTxt" size="50">
-    <button id="htmBtn">Sent To SVG Document</button>
-    <!--======-->
-
-    <br><br><br><br>
-
-    <canvas id="canvas" width="500" height="150">[CANVAS AREA]</canvas>
-    
-
-      
     <fieldset>
-      <legend id="legendzzz">Enter Data</legend>
-      <input id="data" type="text">
-      <button onclick="store()">Store Data</button>
-      <button onclick="recall()">Recall Data</button>
-      <button onclick="remove()">Reset</button>
+      <legend id="mylegend">Параметры подключения</legend>
+      айди<input id="IDInstance" type="text">
+      <br>
+      токен<input id="APITokenInstance" type="text">
+      <br>
+      <button onclick="MyGetSettings(1, 2)">get Settings</button> <br>
+      <button onclick="MyGetStateInstance(1, 2)">get State Instance</button>
     </fieldset>
 
 
-    <p>
-      <img id="bin" src="images/bin.jpg" alt="Bin">
-      <img class="dragfolder" id="red" src="images/redfolder.png" width="100px" alt="Folder">
-      <img class="dragfolder" id="blue" src="images/bluefolder.jpg" width="100px" alt="Folder">
-      <img class="dragfolder" id="phiolet" src="images/phioletfolder.png" width="100px" alt="Folder">
-    </p>
-
     <fieldset>
-      <legend>Folder Dropped:</legend>
-      <ol id="listzzz"></ol>
+      <legend id="mylegend">Отправка сообщения</legend>
+      номер телефона<input id="phone" type="text">
+      <br>
+      сам мессадж<input id="MyMessage" type="text">
+      <br>
+      <button onclick="MySendMessage()">Send Message</button>
     </fieldset>
 
 
-    <h1>Sender</h1>
-    <p id="host">Main Page Domain:   </p>
-    <iframe id="cage" width="450" height="120" src="http://localhost/receiver.html"></iframe>
-    <button onclick="sendMsg()">Send Message</button>
+    <fieldset>
+      <legend id="mylegend">Отправка файла</legend>
+      номер телефона<input id="phone2" type="text">
+      <br>
+      url картинки<input id="FileUrl" type="text">
+      <br>
+      <button onclick="MySendFileByUrl()">Send File by url</button>
+    </fieldset>
 
 
-    <p id="msg" style="width:450px; height: 50px; border: 1px solid black;"></p>
-    <p id="map" style="width:450px; height: 200px"></p>
 
-    
+    <output name="resultsss">60</output>
 
+    ОТВЕТ:
+    <textarea id="green_api_response" rows="50" cols="100" readonly></textarea>
 
-<!-- FreeScout BEGIN -->
-<script>var FreeScoutW={s:{"color":"#b0b2b3","position":"br","show_categories":"1","id":1709697485}};(function(d,e,s){if(d.getElementById("freescout-w"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="freescout-w";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","https://demo.freescout.net/modules/knowledgebase/js/widget.js?v=2020");</script>
-<!-- FreeScout END -->
-
-
+  
 
     
     <!--<script src="scripts/getter-setter.js"></script>-->
-    <script src="scripts/main.js"></script>
+    <!--<script src="scripts/main.js"></script>-->
+    <script src="scripts/for_green_api.js"></script>
     
 
 
